@@ -1,36 +1,18 @@
 # Awesome AI Agent Evaluation
 
-<p align="center">
-  <a href="https://github.com/Lhy723/awesome-ai-agent-evaluation/blob/main/README.zh-CN.md">仓库 README</a> |
-  <a href="../index.html">English</a>
-</p>
+[仓库 README](https://github.com/Lhy723/awesome-ai-agent-evaluation/blob/main/README.zh-CN.md) |
+[English](../index.md)
 
 短入口。完整清单见 README。
 
 ## 快速入口
 
-<table>
-  <tr>
-    <th>页面</th>
-    <th>适合用来找什么</th>
-  </tr>
-  <tr>
-    <td><a href="benchmarks.html">Benchmarks</a></td>
-    <td>编程、浏览器、computer-use、tool-use 和通用 Agent benchmark。</td>
-  </tr>
-  <tr>
-    <td><a href="frameworks.html">Frameworks</a></td>
-    <td>评测框架、trace 工具和可观测性平台。</td>
-  </tr>
-  <tr>
-    <td><a href="production-monitoring.html">Production Monitoring</a></td>
-    <td>质量检查、成本、延迟、回归和在线评测。</td>
-  </tr>
-  <tr>
-    <td><a href="papers.html">Papers</a></td>
-    <td>主要 Agent 评测资源背后的方法论文。</td>
-  </tr>
-</table>
+| 页面 | 适合用来找什么 |
+| --- | --- |
+| [Benchmarks](benchmarks.md) | 编程、浏览器、computer-use、tool-use 和通用 Agent benchmark。 |
+| [Frameworks](frameworks.md) | 评测框架、trace 工具和可观测性平台。 |
+| [Production Monitoring](production-monitoring.md) | 质量检查、成本、延迟、回归和在线评测。 |
+| [Papers](papers.md) | 主要 Agent 评测资源背后的方法论文。 |
 
 ## 评测地图
 

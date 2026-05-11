@@ -1,36 +1,18 @@
 # Awesome AI Agent Evaluation
 
-<p align="center">
-  <a href="https://github.com/Lhy723/awesome-ai-agent-evaluation/blob/main/README.md">Repository README</a> |
-  <a href="zh-CN/index.html">Chinese</a>
-</p>
+[Repository README](https://github.com/Lhy723/awesome-ai-agent-evaluation/blob/main/README.md) |
+[Chinese](zh-CN/index.md)
 
 This is the short entry point for the project. The README has the full list; these pages are for readers who want to jump straight to benchmarks, frameworks, monitoring, or papers.
 
 ## Quick routes
 
-<table>
-  <tr>
-    <th>Page</th>
-    <th>Use it for</th>
-  </tr>
-  <tr>
-    <td><a href="benchmarks.html">Benchmarks</a></td>
-    <td>Coding, browser, computer-use, tool-use, and general-purpose agent benchmarks.</td>
-  </tr>
-  <tr>
-    <td><a href="frameworks.html">Frameworks</a></td>
-    <td>Evaluation frameworks, trace tools, and observability platforms.</td>
-  </tr>
-  <tr>
-    <td><a href="production-monitoring.html">Production Monitoring</a></td>
-    <td>Quality checks, cost tracking, latency, regressions, and online evaluation.</td>
-  </tr>
-  <tr>
-    <td><a href="papers.html">Papers</a></td>
-    <td>Methodology papers behind major agent evaluation resources.</td>
-  </tr>
-</table>
+| Page | Use it for |
+| --- | --- |
+| [Benchmarks](benchmarks.md) | Coding, browser, computer-use, tool-use, and general-purpose agent benchmarks. |
+| [Frameworks](frameworks.md) | Evaluation frameworks, trace tools, and observability platforms. |
+| [Production Monitoring](production-monitoring.md) | Quality checks, cost tracking, latency, regressions, and online evaluation. |
+| [Papers](papers.md) | Methodology papers behind major agent evaluation resources. |
 
 ## Evaluation Map
 
