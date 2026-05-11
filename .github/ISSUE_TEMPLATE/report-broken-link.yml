@@ -1,0 +1,33 @@
+name: Report a broken link
+description: Report a dead, redirected, or incorrect resource link
+title: "Broken link: "
+labels: ["broken link"]
+body:
+  - type: input
+    id: resource
+    attributes:
+      label: Resource name
+      placeholder: "e.g. WebArena"
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Broken URL
+      placeholder: "https://..."
+    validations:
+      required: true
+  - type: input
+    id: replacement
+    attributes:
+      label: Suggested replacement URL
+      placeholder: "https://..."
+    validations:
+      required: false
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Add any context, error messages, or screenshots if helpful.
+    validations:
+      required: false

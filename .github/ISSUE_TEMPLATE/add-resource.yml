@@ -1,0 +1,57 @@
+name: Add a resource
+description: Suggest a benchmark, tool, paper, dataset, or guide
+title: "Add: "
+labels: ["resource suggestion"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Resource name
+      placeholder: "e.g. SWE-bench"
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      placeholder: "https://..."
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: Resource type
+      options:
+        - Benchmark
+        - Evaluation framework
+        - Dataset
+        - Paper
+        - Tool
+        - Report / case study
+        - Guide / best practice
+        - Leaderboard
+    validations:
+      required: true
+  - type: dropdown
+    id: focus
+    attributes:
+      label: Main focus
+      options:
+        - General agent evaluation
+        - Coding agents
+        - Browser / web agents
+        - Tool-use / function calling
+        - Multi-agent systems
+        - Safety / robustness
+        - Reliability / recovery
+        - Production monitoring
+        - Human evaluation
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why is it useful?
+      description: Explain what this resource evaluates and why it belongs in the list.
+    validations:
+      required: true

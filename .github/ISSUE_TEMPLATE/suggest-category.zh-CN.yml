@@ -1,0 +1,26 @@
+name: 建议分类
+description: 建议新增分类或调整分类体系
+title: "分类："
+labels: ["category suggestion"]
+body:
+  - type: input
+    id: category
+    attributes:
+      label: 分类名称
+      placeholder: "例如：Mobile Agent Evaluation"
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: 为什么需要这个分类？
+      description: 请说明这个分类解决了读者的什么问题。
+    validations:
+      required: true
+  - type: textarea
+    id: resources
+    attributes:
+      label: 示例资源
+      description: 请列出 2-5 个适合这个分类的高质量资源。
+    validations:
+      required: false

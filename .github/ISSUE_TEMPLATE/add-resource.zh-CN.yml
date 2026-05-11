@@ -1,0 +1,57 @@
+name: 新增资源
+description: 推荐 benchmark、工具、论文、数据集或指南
+title: "新增："
+labels: ["resource suggestion"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: 资源名称
+      placeholder: "例如：SWE-bench"
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: 链接
+      placeholder: "https://..."
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: 资源类型
+      options:
+        - Benchmark
+        - Evaluation framework
+        - Dataset
+        - Paper
+        - Tool
+        - Report / case study
+        - Guide / best practice
+        - Leaderboard
+    validations:
+      required: true
+  - type: dropdown
+    id: focus
+    attributes:
+      label: 主要方向
+      options:
+        - General agent evaluation
+        - Coding agents
+        - Browser / web agents
+        - Tool-use / function calling
+        - Multi-agent systems
+        - Safety / robustness
+        - Reliability / recovery
+        - Production monitoring
+        - Human evaluation
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: 为什么有用？
+      description: 请说明它评测什么，以及为什么应该收录。
+    validations:
+      required: true

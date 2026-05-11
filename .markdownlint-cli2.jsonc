@@ -1,0 +1,15 @@
+{
+  "config": {
+    "MD013": false,
+    "MD033": false
+  },
+  "globs": [
+    "README.md",
+    "README.zh-CN.md",
+    "CONTRIBUTING.md",
+    "CONTRIBUTING.zh-CN.md",
+    "CODE_OF_CONDUCT.md",
+    "CODE_OF_CONDUCT.zh-CN.md",
+    "docs/**/*.md"
+  ]
+}

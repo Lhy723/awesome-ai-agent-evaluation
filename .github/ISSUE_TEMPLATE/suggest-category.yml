@@ -1,0 +1,26 @@
+name: Suggest a category
+description: Suggest a new category or taxonomy change
+title: "Category: "
+labels: ["category suggestion"]
+body:
+  - type: input
+    id: category
+    attributes:
+      label: Category name
+      placeholder: "e.g. Mobile Agent Evaluation"
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Why is this category needed?
+      description: Explain what reader problem this category solves.
+    validations:
+      required: true
+  - type: textarea
+    id: resources
+    attributes:
+      label: Example resources
+      description: List 2-5 high-quality resources that would belong here.
+    validations:
+      required: false
