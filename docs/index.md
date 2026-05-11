@@ -1,8 +1,8 @@
 # Awesome AI Agent Evaluation
 
 <p align="center">
-  <a href="../README.md">Repository README</a> |
-  <a href="zh-CN/index.md">Chinese</a>
+  <a href="https://github.com/Lhy723/awesome-ai-agent-evaluation/blob/main/README.md">Repository README</a> |
+  <a href="zh-CN/index.html">Chinese</a>
 </p>
 
 This is the short entry point for the project. The README has the full list; these pages are for readers who want to jump straight to benchmarks, frameworks, monitoring, or papers.
@@ -15,19 +15,19 @@ This is the short entry point for the project. The README has the full list; the
     <th>Use it for</th>
   </tr>
   <tr>
-    <td><a href="benchmarks.md">Benchmarks</a></td>
+    <td><a href="benchmarks.html">Benchmarks</a></td>
     <td>Coding, browser, computer-use, tool-use, and general-purpose agent benchmarks.</td>
   </tr>
   <tr>
-    <td><a href="frameworks.md">Frameworks</a></td>
+    <td><a href="frameworks.html">Frameworks</a></td>
     <td>Evaluation frameworks, trace tools, and observability platforms.</td>
   </tr>
   <tr>
-    <td><a href="production-monitoring.md">Production Monitoring</a></td>
+    <td><a href="production-monitoring.html">Production Monitoring</a></td>
     <td>Quality checks, cost tracking, latency, regressions, and online evaluation.</td>
   </tr>
   <tr>
-    <td><a href="papers.md">Papers</a></td>
+    <td><a href="papers.html">Papers</a></td>
     <td>Methodology papers behind major agent evaluation resources.</td>
   </tr>
 </table>

@@ -9,9 +9,7 @@
 
 Benchmarks, eval harnesses, papers, datasets, and production checks for AI agents.
 
-Agent evaluation is still a scattered field. Some resources are academic benchmarks, some are engineering test harnesses, some are observability tools, and some are production practices that only make sense after you have traces from real users.
-
-This list keeps those pieces in one place, with a bias toward resources that help answer concrete engineering questions: what was tested, how it was scored, what failed, and whether the result is useful outside a demo.
+Focused on resources that make agent behavior easier to test, compare, debug, or monitor.
 
 <table>
   <tr>
@@ -19,15 +17,15 @@ This list keeps those pieces in one place, with a bias toward resources that hel
     <th>Left out</th>
   </tr>
   <tr>
-    <td>Benchmarks with clear tasks or scoring</td>
+    <td>Benchmarks with clear tasks</td>
     <td>Generic agent demos</td>
   </tr>
   <tr>
-    <td>Frameworks that help run or track evals</td>
+    <td>Frameworks for running evals</td>
     <td>Prompt collections without evaluation</td>
   </tr>
   <tr>
-    <td>Papers and reports with reusable methodology</td>
+    <td>Papers with reusable methods</td>
     <td>Marketing pages with no technical detail</td>
   </tr>
 </table>
@@ -92,285 +90,285 @@ This list keeps those pieces in one place, with a bias toward resources that hel
 
 ## Evaluation Basics
 
-- [OpenAI Evals](https://github.com/openai/evals) — Provides an open-source framework and registry for building repeatable LLM system evaluations.
+- [OpenAI Evals](https://github.com/openai/evals) — Open-source eval framework and registry; useful as a reference for repeatable LLM test design.
   `framework` `evals` `regression`
-- [OpenAI Cookbook: Evaluating model performance](https://cookbook.openai.com/examples/evaluation/how_to_eval_abstractive_summarization) — Shows practical patterns for creating task-specific evaluations and comparing model outputs.
+- [OpenAI Cookbook: Evaluating model performance](https://cookbook.openai.com/examples/evaluation/how_to_eval_abstractive_summarization) — Practical examples for turning a task into a small, inspectable eval.
   `guide` `evaluation-basics` `llm-as-judge`
-- [Hamel Husain: Your AI Product Needs Evals](https://hamel.dev/blog/posts/evals/) — Explains how to design evals for real product workflows instead of relying only on generic benchmarks.
+- [Hamel Husain: Your AI Product Needs Evals](https://hamel.dev/blog/posts/evals/) — A good product-minded primer on why generic benchmarks are not enough.
   `guide` `product-evals` `methodology`
-- [Anthropic: Building effective agents](https://www.anthropic.com/research/building-effective-agents) — Clarifies agent patterns and helps frame which behaviors are worth evaluating.
+- [Anthropic: Building effective agents](https://www.anthropic.com/research/building-effective-agents) — Useful framing for deciding whether a workflow needs an agent at all.
   `guide` `agent-design` `methodology`
-- [LangChain Agent Evals](https://docs.langchain.com/oss/python/langchain/evals) — Introduces trajectory-level agent evaluation with deterministic and judge-based comparison.
+- [LangChain Agent Evals](https://docs.langchain.com/oss/python/langchain/evals) — Trajectory-level checks for tool calls, intermediate steps, and final answers.
   `guide` `agent-trajectory` `framework`
-- [Phoenix LLM Evals](https://arize.com/docs/phoenix/evaluation/llm-evals) — Documents practical LLM and agent evaluation workflows over traces, datasets, and experiments.
+- [Phoenix LLM Evals](https://arize.com/docs/phoenix/evaluation/llm-evals) — Evaluation workflows built around traces, datasets, and experiment runs.
   `guide` `observability` `llm-as-judge`
 
 ## Benchmarks
 
-- [SWE-bench](https://www.swebench.com/SWE-bench/) — Evaluates coding agents on real GitHub issues that require repository-level patches.
+- [SWE-bench](https://www.swebench.com/SWE-bench/) — Real GitHub issues turned into patch tasks for coding agents.
   `benchmark` `coding-agent` `real-world-tasks`
-- [SWE-bench Verified](https://www.swebench.com/SWE-bench/) — Curates engineer-confirmed solvable SWE-bench tasks for more reliable coding-agent comparison.
+- [SWE-bench Verified](https://www.swebench.com/SWE-bench/) — A smaller SWE-bench split with human-checked task quality.
   `benchmark` `coding-agent` `verified`
-- [SWE-bench Live](https://swe-bench-live.github.io/) — Tracks newer issue-resolution tasks to reduce benchmark contamination for coding agents.
+- [SWE-bench Live](https://swe-bench-live.github.io/) — Newer issue-resolution tasks, useful when contamination is a concern.
   `benchmark` `coding-agent` `live`
-- [SWE-bench Multimodal](https://www.swebench.com/SWE-bench/) — Extends software issue evaluation to tasks with visual or multimodal context.
+- [SWE-bench Multimodal](https://www.swebench.com/SWE-bench/) — SWE-style issue tasks where visual context also matters.
   `benchmark` `coding-agent` `multimodal`
-- [SWE-bench Multilingual](https://www.swebench.com/multilingual-leaderboard.html) — Evaluates issue-resolution ability across multiple programming languages.
+- [SWE-bench Multilingual](https://www.swebench.com/multilingual-leaderboard.html) — Issue-resolution tasks spread across multiple programming languages.
   `benchmark` `coding-agent` `multilingual`
-- [GAIA](https://huggingface.co/gaia-benchmark) — Tests general assistant agents on questions requiring reasoning, tool use, web use, and file handling.
+- [GAIA](https://huggingface.co/gaia-benchmark) — General assistant tasks that often require tools, web search, files, and multi-step reasoning.
   `benchmark` `general-agent` `tool-use`
-- [AgentBench](https://github.com/THUDM/AgentBench) — Evaluates LLM agents across interactive environments such as OS, database, web browsing, and games.
+- [AgentBench](https://github.com/THUDM/AgentBench) — A broad interactive benchmark across OS, database, web, game, and reasoning environments.
   `benchmark` `general-agent` `interactive`
-- [OSWorld](https://os-world.github.io/) — Evaluates multimodal computer-use agents on real desktop tasks with execution-based grading.
+- [OSWorld](https://os-world.github.io/) — Desktop computer-use tasks with execution-based grading.
   `benchmark` `computer-use` `desktop-agent`
-- [macOSWorld](https://macos-world.github.io/) — Tests GUI agents in multilingual macOS tasks, including a safety-focused subset.
+- [macOSWorld](https://macos-world.github.io/) — macOS GUI tasks, with multilingual coverage and a safety-oriented subset.
   `benchmark` `computer-use` `gui-agent`
-- [AndroidWorld](https://github.com/google-research/android_world) — Evaluates mobile agents on Android tasks with app-level interaction and programmatic checks.
+- [AndroidWorld](https://github.com/google-research/android_world) — Android app tasks with programmatic checks for mobile agents.
   `benchmark` `mobile-agent` `computer-use`
-- [WebArena](https://webarena.dev/) — Provides self-hosted realistic websites for evaluating browser agents on functional task completion.
+- [WebArena](https://webarena.dev/) — Self-hosted websites for testing whether browser agents actually change state correctly.
   `benchmark` `browser-agent` `web`
-- [VisualWebArena](https://github.com/web-arena-x/visualwebarena) — Adds visually grounded website tasks for agents that use screenshots and page state.
+- [VisualWebArena](https://github.com/web-arena-x/visualwebarena) — WebArena-style tasks where screenshots and visual grounding matter.
   `benchmark` `browser-agent` `multimodal`
-- [WebArena Verified](https://github.com/ServiceNow/webarena-verified) — Curates verified WebArena tasks and deterministic evaluators for more reproducible web-agent testing.
+- [WebArena Verified](https://github.com/ServiceNow/webarena-verified) — Verified WebArena tasks with more deterministic evaluators.
   `benchmark` `browser-agent` `verified`
-- [WorkArena](https://servicenow.github.io/WorkArena/) — Evaluates browser agents on enterprise-style ServiceNow knowledge-work tasks.
+- [WorkArena](https://servicenow.github.io/WorkArena/) — Enterprise-style ServiceNow tasks for browser agents.
   `benchmark` `browser-agent` `enterprise`
-- [BrowserGym](https://github.com/ServiceNow/BrowserGym) — Standardizes browser-agent environments and bundles benchmarks including WebArena, WorkArena, and MiniWoB.
+- [BrowserGym](https://github.com/ServiceNow/BrowserGym) — Shared browser-agent environment wrapping WebArena, WorkArena, MiniWoB, and related tasks.
   `framework` `browser-agent` `benchmark-suite`
-- [Terminal-Bench](https://www.tbench.ai/) — Measures agents on terminal-based tasks that require shell use, debugging, and system operations.
+- [Terminal-Bench](https://www.tbench.ai/) — Terminal tasks for shell use, debugging, and system operations.
   `benchmark` `terminal-agent` `tool-use`
-- [tau-bench](https://github.com/sierra-research/tau-bench) — Evaluates customer-service agents that must converse, follow policies, and call domain APIs.
+- [tau-bench](https://github.com/sierra-research/tau-bench) — Customer-service tasks where the agent must talk, follow policy, and call APIs.
   `benchmark` `tool-use` `multi-turn`
-- [tau2-bench / tau3-bench](https://github.com/sierra-research/tau2-bench) — Updates tau-bench with fixed tasks and newer domains for tool-agent-user interaction.
+- [tau2-bench / tau3-bench](https://github.com/sierra-research/tau2-bench) — Newer tau-style tasks for tool-agent-user interaction.
   `benchmark` `tool-use` `enterprise`
-- [Berkeley Function Calling Leaderboard](https://gorilla.cs.berkeley.edu/leaderboard.html) — Compares model function-calling ability across languages, APIs, multi-turn calls, and executability.
+- [Berkeley Function Calling Leaderboard](https://gorilla.cs.berkeley.edu/leaderboard.html) — Function-calling tests covering API selection, arguments, multi-turn calls, and executability.
   `benchmark` `function-calling` `tool-use`
-- [ToolBench](https://github.com/OpenBMB/ToolBench) — Benchmarks tool-use learning and execution across a large API-oriented task set.
+- [ToolBench](https://github.com/OpenBMB/ToolBench) — API-heavy tasks for studying tool-use behavior at scale.
   `benchmark` `tool-use` `api`
-- [API-Bank](https://github.com/AlibabaResearch/DAMO-ConvAI/tree/main/api-bank) — Evaluates tool-augmented LLMs on API selection, calling, and multi-step tool use.
+- [API-Bank](https://github.com/AlibabaResearch/DAMO-ConvAI/tree/main/api-bank) — API selection and multi-step tool-use tasks.
   `benchmark` `tool-use` `api`
-- [WebShop](https://webshop-pnlp.github.io/) — Tests agents on web shopping tasks with search, comparison, and purchase-goal reasoning.
+- [WebShop](https://webshop-pnlp.github.io/) — Shopping tasks that involve search, comparison, and goal-directed web actions.
   `benchmark` `browser-agent` `commerce`
-- [Mind2Web](https://osu-nlp-group.github.io/Mind2Web/) — Provides real website interaction traces for learning and evaluating web navigation agents.
+- [Mind2Web](https://osu-nlp-group.github.io/Mind2Web/) — Real website interaction traces for web navigation tasks.
   `benchmark` `browser-agent` `web-navigation`
-- [MiniWoB++](https://github.com/Farama-Foundation/miniwob-plusplus) — Provides compact synthetic browser tasks useful for controlled web-agent experimentation.
+- [MiniWoB++](https://github.com/Farama-Foundation/miniwob-plusplus) — Small synthetic browser tasks for fast, controlled experiments.
   `benchmark` `browser-agent` `synthetic`
 
 ## Evaluation Frameworks
 
-- [Inspect AI](https://inspect.aisi.org.uk/) — Offers a model-evaluation framework with tool calling, sandboxes, scorers, logs, and web-based result inspection.
+- [Inspect AI](https://inspect.aisi.org.uk/) — Evaluation framework with tools, sandboxes, scorers, logs, and a result viewer.
   `framework` `evals` `safety`
-- [Inspect Evals](https://github.com/UKGovernmentBEIS/inspect_evals) — Collects community eval implementations for Inspect, including agent, coding, and safety tasks.
+- [Inspect Evals](https://github.com/UKGovernmentBEIS/inspect_evals) — Ready-made Inspect evals, including agent, coding, and safety tasks.
   `framework` `benchmark-registry` `safety`
-- [OpenAI Evals](https://github.com/openai/evals) — Supports custom evals, model-graded checks, and reusable registries for LLM systems.
+- [OpenAI Evals](https://github.com/openai/evals) — Custom evals, model-graded checks, and reusable eval registries.
   `framework` `llm-evaluation` `regression`
-- [DeepEval](https://deepeval.com/docs/introduction) — Provides pytest-style LLM and agent evaluation with metrics for tool use, safety, conversation, and regression testing.
+- [DeepEval](https://deepeval.com/docs/introduction) — Pytest-style evals for LLM apps, with metrics for agents, tools, safety, and conversations.
   `framework` `testing` `agent-eval`
-- [promptfoo](https://github.com/promptfoo/promptfoo) — Runs prompt, model, and agent regression tests with assertions, red teaming, and CI-friendly reports.
+- [promptfoo](https://github.com/promptfoo/promptfoo) — Regression tests for prompts, models, and agents; works well in CI.
   `framework` `regression` `ci`
-- [Ragas](https://docs.ragas.io/en/stable/) — Provides evaluation metrics for RAG, tool use, and agentic workflows.
+- [Ragas](https://docs.ragas.io/en/stable/) — Metrics for RAG, tool use, and agent-style workflows.
   `framework` `metrics` `rag`
-- [LangSmith](https://docs.langchain.com/langsmith/home) — Supports tracing, datasets, experiments, human review, online evaluators, and agent trajectory evaluation.
+- [LangSmith](https://docs.langchain.com/langsmith/home) — Tracing, datasets, experiments, human review, online evaluators, and agent trajectory checks.
   `platform` `observability` `agent-eval`
-- [LangChain AgentEvals](https://github.com/langchain-ai/agentevals) — Provides prebuilt evaluators for comparing agent trajectories and tool-call behavior.
+- [LangChain AgentEvals](https://github.com/langchain-ai/agentevals) — Prebuilt evaluators for agent trajectories and tool-call behavior.
   `framework` `agent-trajectory` `tool-use`
-- [Arize Phoenix](https://arize.com/docs/phoenix) — Offers open-source tracing, dataset experiments, and LLM evaluators for debugging AI applications.
+- [Arize Phoenix](https://arize.com/docs/phoenix) — Open-source tracing, dataset experiments, and LLM evaluators.
   `platform` `observability` `evaluation`
-- [Langfuse](https://langfuse.com/docs) — Tracks traces, prompts, evaluations, cost, latency, and production health for LLM applications.
+- [Langfuse](https://langfuse.com/docs) — Traces, prompts, evals, cost, latency, and production health in one place.
   `platform` `observability` `production`
-- [Braintrust](https://www.braintrust.dev/docs) — Provides datasets, experiments, evaluators, tracing, and prompt iteration for AI product evaluation.
+- [Braintrust](https://www.braintrust.dev/docs) — Datasets, experiments, scorers, tracing, and prompt iteration for AI products.
   `platform` `experiments` `regression`
-- [Giskard](https://github.com/Giskard-AI/giskard) — Tests AI systems for quality, bias, hallucination, and security issues with automated checks.
+- [Giskard](https://github.com/Giskard-AI/giskard) — Automated checks for quality, bias, hallucination, and security issues.
   `framework` `quality` `safety`
-- [TruLens](https://www.trulens.org/) — Provides instrumentation and feedback functions for evaluating LLM application behavior.
+- [TruLens](https://www.trulens.org/) — Instrumentation and feedback functions for LLM application behavior.
   `framework` `observability` `feedback`
-- [OpenTelemetry GenAI Semantic Conventions](https://opentelemetry.io/docs/specs/semconv/gen-ai/) — Standardizes trace and metric attributes for GenAI calls and agent observability.
+- [OpenTelemetry GenAI Semantic Conventions](https://opentelemetry.io/docs/specs/semconv/gen-ai/) — Common trace and metric fields for GenAI calls.
   `standard` `observability` `telemetry`
-- [OpenInference](https://github.com/Arize-ai/openinference) — Defines open instrumentation conventions for tracing LLM, RAG, and agent applications.
+- [OpenInference](https://github.com/Arize-ai/openinference) — Open instrumentation conventions for LLM, RAG, and agent traces.
   `standard` `observability` `tracing`
 
 ## Coding Agent Evaluation
 
-- [SWE-bench](https://www.swebench.com/SWE-bench/) — The default benchmark family for measuring issue-to-patch software engineering ability.
+- [SWE-bench](https://www.swebench.com/SWE-bench/) — The default issue-to-patch benchmark family for coding agents.
   `benchmark` `coding-agent` `github-issues`
-- [SWE-agent](https://github.com/SWE-agent/SWE-agent) — Provides an open coding agent and evaluation harness built around SWE-bench-style tasks.
+- [SWE-agent](https://github.com/SWE-agent/SWE-agent) — Open coding agent and harness built around SWE-bench-style tasks.
   `agent` `coding-agent` `swe-bench`
-- [OpenHands](https://github.com/All-Hands-AI/OpenHands) — Open-source software development agent useful for evaluating end-to-end coding workflows.
+- [OpenHands](https://github.com/All-Hands-AI/OpenHands) — Open-source software development agent for end-to-end coding workflows.
   `agent` `coding-agent` `open-source`
-- [Aider](https://github.com/Aider-AI/aider) — Terminal pair-programming agent that can be evaluated on repository editing and regression tasks.
+- [Aider](https://github.com/Aider-AI/aider) — Terminal pair-programming agent; useful for repo-editing regression tasks.
   `agent` `coding-agent` `terminal`
-- [BigCodeBench](https://github.com/bigcode-project/bigcodebench) — Evaluates practical code generation with richer function-level tasks and execution tests.
+- [BigCodeBench](https://github.com/bigcode-project/bigcodebench) — Practical code-generation tasks with execution tests.
   `benchmark` `code-generation` `execution`
-- [RepoBench](https://github.com/Leolty/repobench) — Measures repository-level code completion and retrieval, useful for agent context evaluation.
+- [RepoBench](https://github.com/Leolty/repobench) — Repository-level code completion and retrieval benchmark.
   `benchmark` `coding-agent` `repository-context`
-- [HumanEval](https://github.com/openai/human-eval) — Classic execution-based code-generation benchmark that can serve as a baseline before agentic coding tasks.
+- [HumanEval](https://github.com/openai/human-eval) — Classic execution-based code benchmark; still useful as a baseline.
   `benchmark` `code-generation` `baseline`
-- [EvalPlus](https://github.com/evalplus/evalplus) — Strengthens HumanEval and MBPP with additional tests for more reliable code-generation evaluation.
+- [EvalPlus](https://github.com/evalplus/evalplus) — Harder test suites for HumanEval and MBPP.
   `benchmark` `code-generation` `execution`
-- [LiveCodeBench](https://livecodebench.github.io/) — Evaluates coding ability on newer contest-style problems to reduce contamination risk.
+- [LiveCodeBench](https://livecodebench.github.io/) — Newer contest-style coding problems, designed with contamination in mind.
   `benchmark` `code-generation` `live`
 
 ## Browser / Web Agent Evaluation
 
-- [WebArena](https://webarena.dev/) — Self-hosted realistic web tasks for measuring whether an agent changes website state correctly.
+- [WebArena](https://webarena.dev/) — Realistic self-hosted web tasks with state-based success checks.
   `benchmark` `browser-agent` `self-hosted`
-- [WorkArena](https://servicenow.github.io/WorkArena/) — Enterprise browser benchmark for common knowledge-work tasks in ServiceNow.
+- [WorkArena](https://servicenow.github.io/WorkArena/) — ServiceNow-based benchmark for enterprise knowledge-work tasks.
   `benchmark` `browser-agent` `enterprise`
-- [BrowserGym](https://github.com/ServiceNow/BrowserGym) — Provides a Gym-like interface and shared action space for browser-agent benchmarks.
+- [BrowserGym](https://github.com/ServiceNow/BrowserGym) — Gym-style interface and shared action space for browser-agent benchmarks.
   `framework` `browser-agent` `environment`
-- [AgentLab](https://github.com/ServiceNow/AgentLab) — Helps implement, run, and analyze web agents across BrowserGym-compatible benchmarks.
+- [AgentLab](https://github.com/ServiceNow/AgentLab) — Tooling for running and analyzing BrowserGym-compatible web agents.
   `framework` `browser-agent` `experiments`
-- [Mind2Web](https://osu-nlp-group.github.io/Mind2Web/) — Evaluates real-website navigation from user instructions and observed web pages.
+- [Mind2Web](https://osu-nlp-group.github.io/Mind2Web/) — Real-website navigation tasks from user instructions.
   `benchmark` `browser-agent` `navigation`
-- [WebLINX](https://mcgill-nlp.github.io/weblinx/) — Provides real-world browser interaction demonstrations for training and evaluating web agents.
+- [WebLINX](https://mcgill-nlp.github.io/weblinx/) — Browser interaction demonstrations from real-world web tasks.
   `dataset` `browser-agent` `demonstrations`
-- [VisualWebArena](https://github.com/web-arena-x/visualwebarena) — Tests visual grounding and multimodal reasoning in web-agent tasks.
+- [VisualWebArena](https://github.com/web-arena-x/visualwebarena) — Web tasks that need visual grounding, not just DOM text.
   `benchmark` `browser-agent` `visual`
-- [MiniWoB++](https://github.com/Farama-Foundation/miniwob-plusplus) — Offers small, controlled web UI tasks for rapid agent iteration.
+- [MiniWoB++](https://github.com/Farama-Foundation/miniwob-plusplus) — Small controlled UI tasks for quick browser-agent iteration.
   `benchmark` `browser-agent` `synthetic`
-- [browser-use benchmark](https://github.com/browser-use/benchmark) — Curates browser automation tasks across established and custom task families.
+- [browser-use benchmark](https://github.com/browser-use/benchmark) — Browser automation tasks spanning established and custom task sets.
   `benchmark` `browser-agent` `automation`
 
 ## Tool-Use and Function Calling
 
-- [Berkeley Function Calling Leaderboard](https://gorilla.cs.berkeley.edu/leaderboard.html) — Measures function-calling, relevance detection, executable calls, and multi-turn tool use.
+- [Berkeley Function Calling Leaderboard](https://gorilla.cs.berkeley.edu/leaderboard.html) — Function-calling tests for relevance, arguments, executability, and multi-turn use.
   `benchmark` `function-calling` `tool-use`
-- [tau2-bench / tau3-bench](https://github.com/sierra-research/tau2-bench) — Evaluates multi-turn tool-using agents with simulated users, policies, and database-state scoring.
+- [tau2-bench / tau3-bench](https://github.com/sierra-research/tau2-bench) — Multi-turn tool-use tasks with simulated users, policies, and database-state scoring.
   `benchmark` `tool-use` `customer-service`
-- [ToolBench](https://github.com/OpenBMB/ToolBench) — Tests tool-learning and API-use ability over many real-world tools.
+- [ToolBench](https://github.com/OpenBMB/ToolBench) — Large API-oriented benchmark for tool learning and tool use.
   `benchmark` `tool-use` `api`
-- [API-Bank](https://github.com/AlibabaResearch/DAMO-ConvAI/tree/main/api-bank) — Evaluates whether models can choose, call, and chain APIs correctly.
+- [API-Bank](https://github.com/AlibabaResearch/DAMO-ConvAI/tree/main/api-bank) — API choice, API calling, and multi-step tool chaining.
   `benchmark` `tool-use` `api`
-- [Gorilla](https://github.com/ShishirPatil/gorilla) — Provides datasets and methods for teaching models to call APIs accurately.
+- [Gorilla](https://github.com/ShishirPatil/gorilla) — Datasets and methods focused on accurate API calls.
   `dataset` `function-calling` `api`
-- [ToolSandbox](https://github.com/apple/ToolSandbox) — Evaluates stateful tool-use agents in simulated environments with execution traces.
+- [ToolSandbox](https://github.com/apple/ToolSandbox) — Stateful tool-use tasks in simulated environments with execution traces.
   `benchmark` `tool-use` `stateful`
-- [Ragas Tool Call Metrics](https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/) — Includes tool-call accuracy and agent-goal metrics for application-level evaluation.
+- [Ragas Tool Call Metrics](https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/) — Tool-call and agent-goal metrics for application-level evals.
   `metrics` `tool-use` `agent-eval`
 
 ## Multi-Agent Evaluation
 
-- [AutoGenBench](https://microsoft.github.io/autogen/0.2/blog/2024/01/25/AutoGenBench/) — Benchmarks multi-agent workflows built with AutoGen through repeatable tasks and metrics.
+- [AutoGenBench](https://microsoft.github.io/autogen/0.2/blog/2024/01/25/AutoGenBench/) — Repeatable tasks and metrics for AutoGen multi-agent workflows.
   `benchmark` `multi-agent` `framework`
-- [AgentVerse](https://github.com/OpenBMB/AgentVerse) — Provides a framework for simulating and evaluating groups of collaborating agents.
+- [AgentVerse](https://github.com/OpenBMB/AgentVerse) — Framework for simulating groups of collaborating agents.
   `framework` `multi-agent` `simulation`
-- [MetaGPT](https://github.com/FoundationAgents/MetaGPT) — Implements software-company-style multi-agent workflows that can be evaluated for coordination and output quality.
+- [MetaGPT](https://github.com/FoundationAgents/MetaGPT) — Software-company-style multi-agent workflows; useful for coordination studies.
   `framework` `multi-agent` `software-engineering`
-- [ChatDev](https://github.com/OpenBMB/ChatDev) — Explores communicative multi-agent software development and coordination patterns.
+- [ChatDev](https://github.com/OpenBMB/ChatDev) — Multi-agent software development via role-based conversation.
   `framework` `multi-agent` `collaboration`
-- [CAMEL](https://github.com/camel-ai/camel) — Provides multi-agent role-playing and society simulation infrastructure for agent research.
+- [CAMEL](https://github.com/camel-ai/camel) — Role-playing and society simulation infrastructure for agent research.
   `framework` `multi-agent` `simulation`
 
 ## Safety & Robustness
 
-- [AgentDojo](https://github.com/ethz-spylab/agentdojo) — Evaluates tool-using agents against indirect prompt-injection attacks and utility-security tradeoffs.
+- [AgentDojo](https://github.com/ethz-spylab/agentdojo) — Indirect prompt-injection benchmark for tool-using agents.
   `benchmark` `safety` `prompt-injection`
-- [AgentHarm](https://ukgovernmentbeis.github.io/inspect_evals/evals/safeguards/agentharm/) — Tests whether agents comply with harmful requests across cybercrime, fraud, harassment, and related domains.
+- [AgentHarm](https://ukgovernmentbeis.github.io/inspect_evals/evals/safeguards/agentharm/) — Harmful-request tasks for agent settings, including cybercrime and fraud.
   `benchmark` `safety` `agent`
-- [b3: Backbone Breaker Benchmark](https://ukgovernmentbeis.github.io/inspect_evals/evals/safeguards/b3/) — Evaluates agentic AI security vulnerabilities such as data exfiltration and system compromise.
+- [b3: Backbone Breaker Benchmark](https://ukgovernmentbeis.github.io/inspect_evals/evals/safeguards/b3/) — Agentic security tasks around exfiltration, compromise, and misuse.
   `benchmark` `security` `agent`
-- [Purple Llama CyberSecEval](https://github.com/meta-llama/PurpleLlama) — Provides cybersecurity safety evaluations for LLMs and agents.
+- [Purple Llama CyberSecEval](https://github.com/meta-llama/PurpleLlama) — Cybersecurity safety evals for LLMs and agentic systems.
   `benchmark` `security` `cyber`
-- [HarmBench](https://github.com/centerforaisafety/HarmBench) — Evaluates refusal and harmful-behavior robustness across standardized adversarial tasks.
+- [HarmBench](https://github.com/centerforaisafety/HarmBench) — Standardized adversarial tasks for harmful-behavior robustness.
   `benchmark` `safety` `robustness`
-- [PromptBench](https://github.com/microsoft/promptbench) — Tests prompt robustness and adversarial prompt sensitivity across NLP and LLM tasks.
+- [PromptBench](https://github.com/microsoft/promptbench) — Prompt robustness and adversarial prompt sensitivity tests.
   `benchmark` `robustness` `prompts`
-- [Garak](https://github.com/NVIDIA/garak) — Scans LLM applications for vulnerabilities such as jailbreaks, prompt injection, and data leakage.
+- [Garak](https://github.com/NVIDIA/garak) — Scanner for jailbreaks, prompt injection, data leakage, and related LLM app risks.
   `tool` `red-teaming` `security`
-- [PyRIT](https://github.com/Azure/PyRIT) — Automates AI red teaming workflows for identifying safety and security risks.
+- [PyRIT](https://github.com/Azure/PyRIT) — Automation framework for AI red-team workflows.
   `tool` `red-teaming` `safety`
 
 ## Reliability & Failure Recovery
 
-- [Terminal-Bench](https://www.tbench.ai/) — Useful for measuring whether terminal agents can recover from errors while completing system tasks.
+- [Terminal-Bench](https://www.tbench.ai/) — Good fit for studying recovery in shell-based tasks.
   `benchmark` `reliability` `terminal`
-- [tau2-bench / tau3-bench](https://github.com/sierra-research/tau2-bench) — Captures policy, conversation, and tool-use failures in realistic customer-support settings.
+- [tau2-bench / tau3-bench](https://github.com/sierra-research/tau2-bench) — Captures policy, conversation, and tool-use failures in support-style workflows.
   `benchmark` `reliability` `tool-use`
-- [LangSmith Online Evaluators](https://docs.langchain.com/langsmith/online-evaluations-llm-as-judge) — Scores production traces to detect regressions and quality drift after deployment.
+- [LangSmith Online Evaluators](https://docs.langchain.com/langsmith/online-evaluations-llm-as-judge) — Online scoring for production traces and regressions.
   `platform` `monitoring` `regression`
-- [promptfoo Assertions](https://www.promptfoo.dev/docs/configuration/expected-outputs/) — Lets teams express deterministic, model-graded, and custom assertions for regression testing.
+- [promptfoo Assertions](https://www.promptfoo.dev/docs/configuration/expected-outputs/) — Deterministic, model-graded, and custom assertions for regression suites.
   `framework` `regression` `ci`
-- [DeepEval Metrics](https://deepeval.com/docs/metrics-introduction) — Provides agent, tool-use, conversational, safety, and custom metrics for automated test suites.
+- [DeepEval Metrics](https://deepeval.com/docs/metrics-introduction) — Agent, tool-use, conversation, safety, and custom metrics.
   `framework` `metrics` `regression`
-- [Invariant](https://github.com/invariantlabs-ai/invariant) — Helps define guardrails and tests over agent traces, tool calls, and application behavior.
+- [Invariant](https://github.com/invariantlabs-ai/invariant) — Guardrails and tests over agent traces, tool calls, and app behavior.
   `framework` `guardrails` `agent-traces`
 
 ## Cost, Latency, and Efficiency
 
-- [Langfuse](https://langfuse.com/docs) — Tracks trace-level cost, latency, model usage, prompts, and evaluation scores.
+- [Langfuse](https://langfuse.com/docs) — Trace-level cost, latency, model usage, prompts, and eval scores.
   `platform` `cost` `observability`
-- [Helicone](https://github.com/Helicone/helicone) — Provides open-source LLM observability, usage analytics, cost tracking, and request logging.
+- [Helicone](https://github.com/Helicone/helicone) — Open-source request logging, cost tracking, and usage analytics.
   `platform` `cost` `monitoring`
-- [LiteLLM Proxy](https://docs.litellm.ai/docs/proxy/quick_start) — Adds unified model routing, budgets, logging, and spend controls for LLM applications.
+- [LiteLLM Proxy](https://docs.litellm.ai/docs/proxy/quick_start) — Model routing, budgets, logging, and spend controls.
   `tool` `cost` `routing`
-- [OpenLLMetry](https://github.com/traceloop/openllmetry) — Instruments LLM applications with OpenTelemetry-compatible traces and metrics.
+- [OpenLLMetry](https://github.com/traceloop/openllmetry) — OpenTelemetry-compatible traces and metrics for LLM apps.
   `tool` `observability` `telemetry`
-- [OpenTelemetry GenAI Semantic Conventions](https://opentelemetry.io/docs/specs/semconv/gen-ai/) — Defines common telemetry fields for GenAI systems, helping normalize cost and latency analysis.
+- [OpenTelemetry GenAI Semantic Conventions](https://opentelemetry.io/docs/specs/semconv/gen-ai/) — Shared telemetry fields for GenAI cost, latency, and usage analysis.
   `standard` `telemetry` `metrics`
-- [Phoenix Tracing](https://arize.com/docs/phoenix/tracing) — Captures LLM, retrieval, and tool-use traces for latency analysis and debugging.
+- [Phoenix Tracing](https://arize.com/docs/phoenix/tracing) — LLM, retrieval, and tool-use traces for debugging and latency analysis.
   `platform` `latency` `tracing`
 
 ## Human Evaluation Rubrics
 
-- [LangSmith Annotation Queues](https://docs.langchain.com/langsmith/annotation-queues) — Routes traces to human reviewers and captures structured feedback for model and agent evaluation.
+- [LangSmith Annotation Queues](https://docs.langchain.com/langsmith/annotation-queues) — Human review queues for traces and structured feedback.
   `human-eval` `annotation` `platform`
-- [Braintrust Human Review](https://www.braintrust.dev/docs/guides/human-review) — Supports human review workflows over experiment results and production traces.
+- [Braintrust Human Review](https://www.braintrust.dev/docs/guides/human-review) — Human review over experiments and production traces.
   `human-eval` `annotation` `platform`
-- [Phoenix Human Feedback](https://arize.com/docs/phoenix/tracing/concepts-tracing/concepts-annotations) — Supports human labels and annotations alongside automated evaluations.
+- [Phoenix Human Feedback](https://arize.com/docs/phoenix/tracing/concepts-tracing/concepts-annotations) — Human labels and annotations alongside automated evals.
   `human-eval` `annotation` `observability`
-- [OpenAI Evals Model-Graded Templates](https://github.com/openai/evals/blob/main/docs/eval-templates.md) — Provides reusable patterns for rubric-based and model-graded evaluation.
+- [OpenAI Evals Model-Graded Templates](https://github.com/openai/evals/blob/main/docs/eval-templates.md) — Reusable patterns for rubric-based and model-graded evals.
   `rubric` `llm-as-judge` `templates`
-- [Langfuse Scores](https://langfuse.com/docs/scores/overview) — Tracks human, heuristic, and model-based scores on traces and observations.
+- [Langfuse Scores](https://langfuse.com/docs/scores/overview) — Human, heuristic, and model-based scores on traces.
   `human-eval` `scoring` `monitoring`
 
 ## Production Monitoring
 
-- [LangSmith](https://docs.langchain.com/langsmith/home) — Combines tracing, datasets, online evaluators, human review, and deployment monitoring for agents.
+- [LangSmith](https://docs.langchain.com/langsmith/home) — Tracing, datasets, online evals, human review, and deployment monitoring.
   `platform` `production` `monitoring`
-- [Langfuse](https://langfuse.com/docs) — Provides open-source observability, prompt management, evaluations, and production health tracking.
+- [Langfuse](https://langfuse.com/docs) — Open-source observability, prompt management, evals, and production health tracking.
   `platform` `production` `observability`
-- [Arize Phoenix](https://arize.com/docs/phoenix) — Supports tracing, experiments, evaluations, prompt iteration, and self-hosted debugging workflows.
+- [Arize Phoenix](https://arize.com/docs/phoenix) — Tracing, experiments, evals, prompt iteration, and self-hosted debugging.
   `platform` `production` `observability`
-- [Braintrust](https://www.braintrust.dev/docs) — Connects offline experiments, production logging, scorers, and datasets for continuous AI quality.
+- [Braintrust](https://www.braintrust.dev/docs) — Offline experiments, production logging, scorers, and datasets.
   `platform` `production` `evalops`
-- [Confident AI](https://docs.confident-ai.com/) — Provides a hosted platform around DeepEval for evaluation reports, monitoring, and quality tracking.
+- [Confident AI](https://docs.confident-ai.com/) — Hosted reports, monitoring, and quality tracking around DeepEval.
   `platform` `production` `monitoring`
-- [Helicone](https://github.com/Helicone/helicone) — Tracks request logs, user analytics, cost, latency, and model provider behavior.
+- [Helicone](https://github.com/Helicone/helicone) — Request logs, user analytics, cost, latency, and provider behavior.
   `platform` `monitoring` `cost`
-- [WhyLabs LangKit](https://github.com/whylabs/langkit) — Provides text-quality, prompt-injection, toxicity, and drift signals for LLM monitoring.
+- [WhyLabs LangKit](https://github.com/whylabs/langkit) — Text quality, prompt-injection, toxicity, and drift signals.
   `tool` `monitoring` `quality`
-- [TruLens](https://www.trulens.org/) — Provides feedback-based monitoring and evaluation for LLM applications.
+- [TruLens](https://www.trulens.org/) — Feedback-based monitoring and evals for LLM applications.
   `platform` `monitoring` `feedback`
 
 ## Papers
 
-- [SWE-bench: Can Language Models Resolve Real-World GitHub Issues?](https://arxiv.org/abs/2310.06770) — Introduces issue-to-patch evaluation over real GitHub repositories.
+- [SWE-bench: Can Language Models Resolve Real-World GitHub Issues?](https://arxiv.org/abs/2310.06770) — The paper behind repository-level issue-to-patch evaluation.
   `paper` `coding-agent` `benchmark`
-- [AgentBench: Evaluating LLMs as Agents](https://arxiv.org/abs/2308.03688) — Defines a multi-environment benchmark for interactive LLM agents.
+- [AgentBench: Evaluating LLMs as Agents](https://arxiv.org/abs/2308.03688) — Multi-environment benchmark for interactive LLM agents.
   `paper` `general-agent` `benchmark`
-- [GAIA: A Benchmark for General AI Assistants](https://arxiv.org/abs/2311.12983) — Introduces challenging assistant tasks requiring reasoning, tools, and multimodal resources.
+- [GAIA: A Benchmark for General AI Assistants](https://arxiv.org/abs/2311.12983) — Hard assistant tasks involving reasoning, tools, and external resources.
   `paper` `general-agent` `benchmark`
-- [OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments](https://arxiv.org/abs/2404.07972) — Introduces execution-based desktop task evaluation for computer-use agents.
+- [OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments](https://arxiv.org/abs/2404.07972) — Desktop computer-use benchmark with execution-based grading.
   `paper` `computer-use` `benchmark`
-- [WebArena: A Realistic Web Environment for Building Autonomous Agents](https://arxiv.org/abs/2307.13854) — Introduces self-hosted realistic websites for functional web-agent evaluation.
+- [WebArena: A Realistic Web Environment for Building Autonomous Agents](https://arxiv.org/abs/2307.13854) — Self-hosted websites for functional browser-agent evaluation.
   `paper` `browser-agent` `benchmark`
-- [VisualWebArena: Evaluating Multimodal Agents on Realistic Visual Web Tasks](https://arxiv.org/abs/2401.13649) — Extends WebArena with visual grounding requirements.
+- [VisualWebArena: Evaluating Multimodal Agents on Realistic Visual Web Tasks](https://arxiv.org/abs/2401.13649) — WebArena-style tasks with visual grounding requirements.
   `paper` `browser-agent` `multimodal`
-- [WorkArena: How Capable Are Web Agents at Solving Common Knowledge Work Tasks?](https://arxiv.org/abs/2403.07718) — Evaluates browser agents on enterprise knowledge-work tasks.
+- [WorkArena: How Capable Are Web Agents at Solving Common Knowledge Work Tasks?](https://arxiv.org/abs/2403.07718) — Enterprise knowledge-work tasks for browser agents.
   `paper` `browser-agent` `enterprise`
-- [The BrowserGym Ecosystem for Web Agent Research](https://arxiv.org/abs/2412.05467) — Describes a shared browser-agent environment and benchmark ecosystem.
+- [The BrowserGym Ecosystem for Web Agent Research](https://arxiv.org/abs/2412.05467) — Shared environment and tooling for browser-agent research.
   `paper` `browser-agent` `framework`
-- [tau-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains](https://arxiv.org/abs/2406.12045) — Evaluates agents in multi-turn conversations with tools, policies, and simulated users.
+- [tau-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains](https://arxiv.org/abs/2406.12045) — Multi-turn tool-agent-user interaction in realistic domains.
   `paper` `tool-use` `multi-turn`
-- [Berkeley Function-Calling Leaderboard](https://gorilla.cs.berkeley.edu/blogs/8_berkeley_function_calling_leaderboard.html) — Explains executable function-calling evaluation and the BFCL benchmark family.
+- [Berkeley Function-Calling Leaderboard](https://gorilla.cs.berkeley.edu/blogs/8_berkeley_function_calling_leaderboard.html) — Background on executable function-calling evaluation and BFCL.
   `paper` `function-calling` `tool-use`
-- [ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs](https://arxiv.org/abs/2307.16789) — Introduces ToolBench and methods for API-using LLM agents.
+- [ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs](https://arxiv.org/abs/2307.16789) — ToolBench and methods for API-using LLM agents.
   `paper` `tool-use` `api`
-- [API-Bank: A Comprehensive Benchmark for Tool-Augmented LLMs](https://arxiv.org/abs/2304.08244) — Studies API-augmented LLM evaluation and training.
+- [API-Bank: A Comprehensive Benchmark for Tool-Augmented LLMs](https://arxiv.org/abs/2304.08244) — API-augmented LLM evaluation and training.
   `paper` `tool-use` `api`
-- [AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents](https://arxiv.org/abs/2406.13352) — Introduces utility-security evaluation for tool-using agents.
+- [AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents](https://arxiv.org/abs/2406.13352) — Utility-security tradeoffs under prompt-injection attacks.
   `paper` `safety` `prompt-injection`
-- [AgentHarm: A Benchmark for Measuring Harmfulness of LLM Agents](https://arxiv.org/abs/2410.09024) — Evaluates harmful agent behavior under malicious instructions.
+- [AgentHarm: A Benchmark for Measuring Harmfulness of LLM Agents](https://arxiv.org/abs/2410.09024) — Harmful-behavior benchmark for agentic settings.
   `paper` `safety` `agent`
 
 ## Datasets
@@ -394,26 +392,26 @@ This list keeps those pieces in one place, with a bias toward resources that hel
 
 ## Reports & Case Studies
 
-- [SWE-bench Leaderboard](https://www.swebench.com/) — Tracks submitted systems and coding-agent performance across SWE-bench variants.
+- [SWE-bench Leaderboard](https://www.swebench.com/) — Submitted systems across SWE-bench variants.
   `leaderboard` `coding-agent` `benchmark`
-- [GAIA Leaderboard](https://huggingface.co/spaces/gaia-benchmark/leaderboard) — Tracks general AI assistant benchmark submissions and results.
+- [GAIA Leaderboard](https://huggingface.co/spaces/gaia-benchmark/leaderboard) — Public submissions for the GAIA assistant benchmark.
   `leaderboard` `general-agent` `benchmark`
-- [OSWorld Leaderboard](https://os-world.github.io/) — Reports computer-use agent results on real desktop task suites.
+- [OSWorld Leaderboard](https://os-world.github.io/) — Computer-use agent results on desktop task suites.
   `leaderboard` `computer-use` `benchmark`
-- [Terminal-Bench Leaderboard](https://www.tbench.ai/) — Tracks terminal-agent task-resolution performance and benchmark releases.
+- [Terminal-Bench Leaderboard](https://www.tbench.ai/) — Terminal-agent results and benchmark releases.
   `leaderboard` `terminal-agent` `benchmark`
-- [BFCL Leaderboard](https://gorilla.cs.berkeley.edu/leaderboard.html) — Tracks function-calling benchmark performance across model providers.
+- [BFCL Leaderboard](https://gorilla.cs.berkeley.edu/leaderboard.html) — Function-calling results across model providers.
   `leaderboard` `function-calling` `tool-use`
-- [Inspect Evals Documentation](https://ukgovernmentbeis.github.io/inspect_evals/) — Documents runnable eval implementations for safety, coding, agent, and reasoning tasks.
+- [Inspect Evals Documentation](https://ukgovernmentbeis.github.io/inspect_evals/) — Runnable Inspect evals for safety, coding, agent, and reasoning tasks.
   `docs` `benchmark-registry` `safety`
 
 ## Related Awesome Lists
 
-- [Awesome-LLM-Eval](https://github.com/onejune2018/awesome-llm-eval) — Curates LLM evaluation methods, datasets, tools, and leaderboards.
+- [Awesome-LLM-Eval](https://github.com/onejune2018/awesome-llm-eval) — Broader LLM evaluation methods, datasets, tools, and leaderboards.
   `awesome-list` `llm-evaluation` `related`
-- [awesome-llm-agents](https://github.com/kaushikb11/awesome-llm-agents) — Collects LLM agent papers, projects, frameworks, and resources.
+- [awesome-llm-agents](https://github.com/kaushikb11/awesome-llm-agents) — Broader LLM agent papers, projects, frameworks, and resources.
   `awesome-list` `llm-agents` `related`
-- [awesome-ai-agents](https://github.com/e2b-dev/awesome-ai-agents) — Lists AI agent frameworks, tools, and examples across the ecosystem.
+- [awesome-ai-agents](https://github.com/e2b-dev/awesome-ai-agents) — Agent frameworks, tools, and examples across the ecosystem.
   `awesome-list` `ai-agents` `related`
 - [awesome-production-machine-learning](https://github.com/EthicalML/awesome-production-machine-learning) — Useful for connecting agent evaluation to production ML monitoring and operations.
   `awesome-list` `production` `monitoring`
