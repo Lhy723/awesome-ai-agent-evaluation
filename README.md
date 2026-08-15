@@ -126,6 +126,8 @@ Focused on resources that make agent behavior easier to test, compare, debug, or
 - [AndroidWorld](https://github.com/google-research/android_world) — Android app tasks with programmatic checks for mobile agents.
   `benchmark` `mobile-agent` `computer-use`
 - [ClawBench](https://github.com/reacher-z/ClawBench) — Live-website browser-agent benchmark; 283 everyday tasks (V1 153 + V2 130) across 163 platforms. Two-stage scoring: HTTP-request interception at per-task URL/method schema + LLM judge on the intercepted payload. [Paper](https://arxiv.org/abs/2604.08523) · [Live leaderboard](https://claw-bench.com)
+- [Dr. Bench](https://github.com/EVIGBYEN/DrBench) — Evaluates deep-research agents on 214 expert-curated report tasks using semantic quality, topical focus, and retrieval-trustworthiness metrics.
+  `benchmark` `general-agent` `dataset`
 - [WebArena](https://webarena.dev/) — Self-hosted websites for testing whether browser agents actually change state correctly.
   `benchmark` `browser-agent` `web`
 - [VisualWebArena](https://github.com/web-arena-x/visualwebarena) — WebArena-style tasks where screenshots and visual grounding matter.
