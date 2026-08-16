@@ -229,6 +229,8 @@ Focused on resources that make agent behavior easier to test, compare, debug, or
   `benchmark` `browser-agent` `synthetic`
 - [browser-use benchmark](https://github.com/browser-use/benchmark) — Browser automation tasks spanning established and custom task sets.
   `benchmark` `browser-agent` `automation`
+- [Agent QA](https://github.com/vostride/agent-qa) — Application-level QA agent for persistent natural-language web and mobile regression tests, with MCP-accessible run evidence and triage workflows.
+  `tool` `browser-automation` `application-testing`
 
 ## Tool-Use and Function Calling
 
