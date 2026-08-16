@@ -321,6 +321,8 @@ Focused on resources that make agent behavior easier to test, compare, debug, or
   `rubric` `llm-as-judge` `templates`
 - [Langfuse Scores](https://langfuse.com/docs/scores/overview) — Human, heuristic, and model-based scores on traces.
   `human-eval` `scoring` `monitoring`
+- [Awesome Agentic Engineering](https://github.com/lindixu6-hash/awesome-agentic-engineering) — Bilingual 20-point production-readiness rubric with web, CLI, and Node 24 GitHub Action gates across permissions, memory, evals, recovery, security, observability, cost, human review, and documentation.
+  `human-eval` `rubric` `production` `open-source`
 
 ## Production Monitoring
 
