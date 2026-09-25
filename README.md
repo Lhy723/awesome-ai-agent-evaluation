@@ -341,6 +341,9 @@ Focused on resources that make agent behavior easier to test, compare, debug, or
 - [TruLens](https://www.trulens.org/) — Feedback-based monitoring and evals for LLM applications.
   `platform` `monitoring` `feedback`
 
+- [Noveum](https://noveum.ai/en/docs) - Turns production agent traces into evaluation datasets for comparing model quality, latency, and cost.
+  `production` `monitoring` `commercial`
+
 ## Papers
 
 - [SWE-bench: Can Language Models Resolve Real-World GitHub Issues?](https://arxiv.org/abs/2310.06770) — The paper behind repository-level issue-to-patch evaluation.
