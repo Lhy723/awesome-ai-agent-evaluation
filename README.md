@@ -293,6 +293,8 @@ Focused on resources that make agent behavior easier to test, compare, debug, or
   `framework` `metrics` `regression`
 - [Invariant](https://github.com/invariantlabs-ai/invariant) — Guardrails and tests over agent traces, tool calls, and app behavior.
   `framework` `guardrails` `agent-traces`
+- [Twinbay](https://twinbay.ai) — Stateful third-party API twins for forcing 429s, bounces and failed payments, then checking how the agent recovered.
+  `tool-use` `robustness` `commercial`
 
 ## Cost, Latency, and Efficiency
 
