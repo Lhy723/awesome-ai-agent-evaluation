@@ -266,6 +266,8 @@ Focused on resources that make agent behavior easier to test, compare, debug, or
   `benchmark` `safety` `prompt-injection`
 - [AgentHarm](https://ukgovernmentbeis.github.io/inspect_evals/evals/safeguards/agentharm/) — Harmful-request tasks for agent settings, including cybercrime and fraud.
   `benchmark` `safety` `agent`
+- [AgentLeak](https://github.com/Privatris/AgentLeak) — Evaluates privacy leakage in multi-agent workflows, including inter-agent messages and shared memory that final-output checks can miss.
+  `benchmark` `safety` `multi-agent`
 - [b3: Backbone Breaker Benchmark](https://ukgovernmentbeis.github.io/inspect_evals/evals/safeguards/b3/) — Agentic security tasks around exfiltration, compromise, and misuse.
   `benchmark` `security` `agent`
 - [Purple Llama CyberSecEval](https://github.com/meta-llama/PurpleLlama) — Cybersecurity safety evals for LLMs and agentic systems.
