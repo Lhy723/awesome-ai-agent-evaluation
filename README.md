@@ -391,6 +391,9 @@ Focused on resources that make agent behavior easier to test, compare, debug, or
 - [ToolBench Dataset](https://github.com/OpenBMB/ToolBench) — Tool-use data for API-oriented agent evaluation and training.
   `dataset` `tool-use` `api`
 
+- [Windway Verified Agent Trajectories](https://huggingface.co/datasets/RegalFire/windway-verified-agent-trajectories) — 60 state-verified tool-use trajectories from one synthetic local-model run, including failure and recovery outcomes with replay and provenance fields.
+  `dataset` `tool-use` `robustness`
+
 ## Reports & Case Studies
 
 - [SWE-bench Leaderboard](https://www.swebench.com/) — Submitted systems across SWE-bench variants.
