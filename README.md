@@ -154,6 +154,8 @@ Focused on resources that make agent behavior easier to test, compare, debug, or
   `benchmark` `browser-agent` `web-navigation`
 - [MiniWoB++](https://github.com/Farama-Foundation/miniwob-plusplus) — Small synthetic browser tasks for fast, controlled experiments.
   `benchmark` `browser-agent` `synthetic`
+- [ProveCart Verified Agent Exam](https://provecart.com/benchmark.json) — A live, server-graded conformity benchmark for agents that shop, book, or reserve on a customer's behalf: each sitting serves 36 seeded tasks graded against the customer's signed instructions (safe decision = proceed only on MATCH, fix-and-resubmit on a correctable BLOCK, escalate on REVIEW); a 12-instance practice set is public and the scoreboard is public. Pass mark 80.
+  `benchmark` `commerce-agents` `live-eval`
 
 ## Evaluation Frameworks
 
