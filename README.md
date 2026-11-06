@@ -293,6 +293,8 @@ Focused on resources that make agent behavior easier to test, compare, debug, or
   `framework` `metrics` `regression`
 - [Invariant](https://github.com/invariantlabs-ai/invariant) — Guardrails and tests over agent traces, tool calls, and app behavior.
   `framework` `guardrails` `agent-traces`
+- [agent-qa eval corpus](https://vostride.com/docs/agent-qa/self-improvement/evals) — Replays labelled QA-agent decisions against a baseline to detect regressions and evaluates proposed memory changes with paired replay and live canary evidence.
+  `framework` `regression` `browser-agent`
 
 ## Cost, Latency, and Efficiency
 
