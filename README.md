@@ -294,6 +294,9 @@ Focused on resources that make agent behavior easier to test, compare, debug, or
 - [Invariant](https://github.com/invariantlabs-ai/invariant) — Guardrails and tests over agent traces, tool calls, and app behavior.
   `framework` `guardrails` `agent-traces`
 
+- [Agent Retry Rodeo](https://github.com/RishabhPande/agent-retry-rodeo) - Local fault-injection harness for recovery adapters, with persisted-state checks and saved-run regression comparison; includes scripted teaching baselines, not measured LLM results.
+  `framework` `tool-use` `open-source`
+
 ## Cost, Latency, and Efficiency
 
 - [Langfuse](https://langfuse.com/docs) — Trace-level cost, latency, model usage, prompts, and eval scores.
