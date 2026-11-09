@@ -390,6 +390,8 @@ Focused on resources that make agent behavior easier to test, compare, debug, or
   `dataset` `function-calling` `tool-use`
 - [ToolBench Dataset](https://github.com/OpenBMB/ToolBench) — Tool-use data for API-oriented agent evaluation and training.
   `dataset` `tool-use` `api`
+- [Agentic AI Test Checklist 110](https://huggingface.co/datasets/srinivaspadmanabhuni/agentic-ai-test-checklist-110) — Open test-design catalogue of 110 agent checks with acceptance criteria, pass/fail signals, synthetic examples and labelled traces; for coverage planning, not a model benchmark.
+  `dataset` `tool-use` `safety` `open-source`
 
 ## Reports & Case Studies
 
